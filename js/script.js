@@ -10,4 +10,15 @@ function removeActiveClasses() {
     panels.forEach(panel => {
         panel.classList.remove('active')
     })
+} 
+let currentIndex = 0;
+
+function activateNextPanel() {
+    removeActiveClasses();
+    panels[currentIndex].classList.add('active');
+    currentIndex = (currentIndex + 1) % panels.length;
 }
+
+setInterval(activateNextPanel, 2000); // Change panel every 2 seconds
+
+  
